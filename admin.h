@@ -30,8 +30,9 @@ std::string mob;
 
 
 //  logic for guest class
-class guest : public admin{
+class customer : public admin{
   public :
+  std::string name;
 
 } g;
 
