@@ -3,18 +3,21 @@
 #include<stdlib.h>
 #include<conio.h>
 #include<fstream>
-#include "admin.h"
+
+#include "food_stall.cpp"
+
 using namespace std;
 int main()
-{int choice;
-
-    cout<<"\n\n\n\t\tWelcome to Food Court Management system  ";
+{int choice; cout<<"\n\n\n\t\tWelcome to Food Court Management system  ";
     cout<<"\n\n\n\t\tPlease press enter to continue ";
     getch();
+while(choice!=0){
+   
     cout<<"\n\n\t\t******************************************";
     cout<<"\n\n\t\tPress 1 for Admin portal ";
     cout<<"\n\t\tPress 2 for Food stall portal ";
     cout<<"\n\t\tPress 3 for Customer portal ";
+    cout<<"\n\t\tpress 0 to exit ";
     cout<<"\n\n\t\tEnter your choice : ";
 
              cin>>choice;
@@ -34,12 +37,18 @@ int main()
     cin>>tmp;
     if(tmp==1)
     {   ad.create_acc();
-        ad.food_stall();
-          
-  
+    if(ad.flag==0)
+    {cout<<"invalid credentials ,please create account again\n";
+      break;
+    }
+        fs.food_stall1();
+    
             
     }
-    if(tmp==0) return 0;
+    else if(choice==2)
+    {
+      fs.food_stall1();
+    }
     
    }
    else if(choice==3)
@@ -50,4 +59,6 @@ int main()
      cin>>mbe;
 
    }
+} 
+  
 }
