@@ -45,18 +45,34 @@ while(choice!=0){
     
             
     }
+    else if(tmp==0){cout<<"\n\t\tThank you for visiting our portal!!!!!!!!!! ";break;}
+    }
+
     else if(choice==2)
     {
       fs.food_stall1();
     }
     
-   }
+   
    else if(choice==3)
    {
      cout<<"\n\n\t\tWELCOME TO GUEST PORTAL ";
      cout<<"\n\t\tEnter your mobile number to continue : ";
      string mbe;
      cin>>mbe;
+     cout<<"\n\t\tPress 1 to view menu ";
+     cout<<"\n\t\tPress 0 to exit ";
+     int num;
+     cin>>num;
+     if(num==1)
+     {
+       fs.food_stall1();
+
+     }
+     else{
+       cout<<"\n\t\tThank you for visiting our portal!!!!!!!!!!";
+       break;
+     }
 
    }
 } 
