@@ -22,6 +22,7 @@ std::string mob;
   std::string stall_name;
   std::vector<std::pair<std::string, int>> items;
   void login();
+  void direct_login();
 
   void create_acc();
   void recover();

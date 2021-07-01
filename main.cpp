@@ -31,6 +31,7 @@ while(choice!=0){
    
    
     cout<<"\n\n\t\tPress 1 to create acoount ";
+    cout<<"\n\t\tpress 2 if you already have an account ";
     cout<<"\n\t\tPress 0 to exit ";
     cout<<"\n\t\tEnter your choice : ";
     int tmp;
@@ -45,7 +46,21 @@ while(choice!=0){
     
             
     }
+    else if(tmp==2)
+    {
+      ad.direct_login();
+      if(ad.flag==0&&ad.inv_key==5)
+    {cout<<"\t\tfailed to login!!\n";
+      break;
+    }
+
+       fs.food_stall1();
+    
+    }
     else if(tmp==0){cout<<"\n\t\tThank you for visiting our portal!!!!!!!!!! ";break;}
+    
+    
+    
     }
 
     else if(choice==2)

@@ -1,5 +1,5 @@
 #include "recover.cpp"
-
+#include<fstream>
 
 void admin::login()
 {
@@ -51,6 +51,59 @@ void admin::login()
   std::cout << "\n\n\t\tlogged in succesfully........ \n";
 }
 
+void admin::direct_login()
+{
+
+ std::cout << "\n\n\t\tLogin to continue\n ";
+  std::cout << "\t\tEnter user name : ";
+  std::string us;
+  std::cin >> us;
+  std::string ps;
+   flag = 0;
+  std::cout << "\n\t\tEnter your password : ";
+  std::cin >> ps;
+
+   std::ifstream hin,hin2;
+   hin.open("user_name.txt");
+   std::string nm,psw;
+   hin>>nm;
+   hin2.open("created_acc.txt");
+   hin2>>psw;
+   if((us==nm)&&(ps==psw))
+   {
+     std::cout << "\n\n\t\tlogged in succesfully........ \n";
+   }
+
+    else
+    {
+       while(us!=nm&&ps!=psw)
+       {
+        std::cout<<"\n\t\tinvalid username or password ";
+          std::cout << "\n\t\tpress 1 to try again ";
+          std::cout << "\n\t\tpress 0 to exit ";
+          std::cout << "\n\t\tyour response : ";
+           int t;
+           std::cin >> t;
+           if(t==1)
+           { std::cout << "\t\tEnter user name : ";
+            std::cin >> us;
+             std::cout << "\n\t\tEnter your password : ";
+              std::cin >> ps;
+
+           }
+           else if(t==0)
+           {flag=0;inv_key=5;
+             return ;
+           }
+
+         }
+
+     std::cout << "\n\n\t\tlogged in succesfully........ \n";
+    }
+
+
+
+}
 
 
 
