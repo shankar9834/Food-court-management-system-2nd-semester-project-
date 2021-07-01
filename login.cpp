@@ -1,5 +1,5 @@
 #include "recover.cpp"
-#include<fstream>
+#include <fstream>
 
 void admin::login()
 {
@@ -8,7 +8,7 @@ void admin::login()
   std::string us;
   std::cin >> us;
   std::string ps;
-   flag = 0;
+  flag = 0;
   std::cout << "\n\t\tEnter your password : ";
   std::cin >> ps;
   while (us != uname || ps != passwd)
@@ -19,16 +19,16 @@ void admin::login()
     std::cout << "\n\t\tpress 0 to exit ";
     std::cout << "\n\t\tyour response : ";
     int t;
-    
+
     std::cin >> t;
     if (t == 2)
     {
       recover();
       flag = 1;
-      inv_key=5;
+      inv_key = 5;
       break;
     }
-    else if(t==1)
+    else if (t == 1)
     {
 
       std::cout << "\t\tEnter user name : ";
@@ -36,15 +36,16 @@ void admin::login()
       std::cout << "\n\t\tEnter your password : ";
       std::cin >> ps;
     }
-    else{
-      return ;
+    else
+    {
+      return;
     }
   }
-    if (flag == 1)
+  if (flag == 1)
   {
     return;
   }
-   /*  if(flag==0)
+  /*  if(flag==0)
   {
     return;
   }*/
@@ -54,57 +55,55 @@ void admin::login()
 void admin::direct_login()
 {
 
- std::cout << "\n\n\t\tLogin to continue\n ";
+  std::cout << "\n\n\t\tLogin to continue\n ";
   std::cout << "\t\tEnter user name : ";
-  std::string us;
-  std::cin >> us;
-  std::string ps;
-   flag = 0;
+  std::string us1;
+  std::cin >> us1;
+  std::string ps1;
+  flag = 0;
   std::cout << "\n\t\tEnter your password : ";
-  std::cin >> ps;
+  std::cin >> ps1;
 
-   std::ifstream hin,hin2;
-   hin.open("user_name.txt");
-   std::string nm,psw;
-   hin>>nm;
-   hin2.open("created_acc.txt");
-   hin2>>psw;
-   if((us==nm)&&(ps==psw))
-   {
-     std::cout << "\n\n\t\tlogged in succesfully........ \n";
-   }
+  std::ifstream hin, hin2;
+  hin.open("user_name.txt");
+  std::string nm, psw;
+  hin >> nm;
+  hin2.open("created_acc.txt");
+  hin2 >> psw;
+  
 
-    else
+  if (us1== nm&&ps1==psw)
+  {
+    
+    
+    std::cout << "\n\n\t\tlogged in succesfully........ \n";
+  }
+
+  else
+  {
+    while (us1 != nm || ps1 != psw)
     {
-       while(us!=nm&&ps!=psw)
-       {
-        std::cout<<"\n\t\tinvalid username or password ";
-          std::cout << "\n\t\tpress 1 to try again ";
-          std::cout << "\n\t\tpress 0 to exit ";
-          std::cout << "\n\t\tyour response : ";
-           int t;
-           std::cin >> t;
-           if(t==1)
-           { std::cout << "\t\tEnter user name : ";
-            std::cin >> us;
-             std::cout << "\n\t\tEnter your password : ";
-              std::cin >> ps;
-
-           }
-           else if(t==0)
-           {flag=0;inv_key=5;
-             return ;
-           }
-
-         }
-
-     std::cout << "\n\n\t\tlogged in succesfully........ \n";
+      std::cout << "\n\t\tinvalid username or password ";
+      std::cout << "\n\t\tpress 1 to try again ";
+      std::cout << "\n\t\tpress 0 to exit ";
+      std::cout << "\n\t\tyour response : ";
+      int t;
+      std::cin >> t;
+      if (t == 1)
+      {
+        std::cout << "\t\tEnter user name : ";
+        std::cin >> us1;
+        std::cout << "\n\t\tEnter your password : ";
+        std::cin >> ps1;
+      }
+      else if (t == 0)
+      {
+        flag = 0;
+        inv_key = 5;
+        return;
+      }
     }
 
-
-
+    std::cout << "\n\n\t\tlogged in succesfully........ \n";
+  }
 }
-
-
-
-

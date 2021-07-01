@@ -12,12 +12,10 @@ private:
   std::string uname;
   char passwd[10];
 
-
-  
-
 public:
-bool flag;int inv_key=0;
-std::string mob;
+  bool flag;
+  int inv_key = 0;
+  std::string mob;
   std::string mail;
   std::string stall_name;
   std::vector<std::pair<std::string, int>> items;
@@ -29,22 +27,19 @@ std::string mob;
 
 } ad;
 
-
 //  logic for guest class
-class customer : public admin{
-  public :
+class customer : public admin
+{
+public:
   std::string name;
 
 } g;
 
-
-
 // food stall
 class food_stall
 {
-  public:
+public:
   void view_stall();
-    void food_stall1();
-}fs
-;
+  void food_stall1();
+} fs;
 #endif
