@@ -16,7 +16,7 @@ private:
   
 
 public:
-bool flag;
+bool flag;int inv_key=0;
 std::string mob;
   std::string mail;
   std::string stall_name;

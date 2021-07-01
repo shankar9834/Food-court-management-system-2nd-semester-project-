@@ -16,13 +16,16 @@ void admin::login()
     std::cout << "\n\t\tinvalid username or password\n";
     std::cout << "\n\t\tif you want to recover account press 2  ";
     std::cout << "\n\t\tpress 1 to try again ";
+    std::cout << "\n\t\tpress 0 to exit ";
     std::cout << "\n\t\tyour response : ";
     int t;
+    
     std::cin >> t;
     if (t == 2)
     {
       recover();
       flag = 1;
+      inv_key=5;
       break;
     }
     else if(t==1)
@@ -34,18 +37,17 @@ void admin::login()
       std::cin >> ps;
     }
     else{
-      flag=0;
-      break;
+      return ;
     }
   }
-  if (flag == 1)
+    if (flag == 1)
   {
     return;
   }
-  if(flag==0)
+   /*  if(flag==0)
   {
     return;
-  }
+  }*/
   std::cout << "\n\n\t\tlogged in succesfully........ \n";
 }
 

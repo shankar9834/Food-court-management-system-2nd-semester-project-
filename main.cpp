@@ -37,8 +37,8 @@ while(choice!=0){
     cin>>tmp;
     if(tmp==1)
     {   ad.create_acc();
-    if(ad.flag==0)
-    {cout<<"invalid credentials ,please create account again\n";
+    if(ad.flag==0&&ad.inv_key==5)
+    {cout<<"\t\tinvalid credentials ,please create account again\n";
       break;
     }
         fs.food_stall1();
