@@ -14,7 +14,7 @@ void admin::create_acc()
   std::cin >> uname;
   hout << uname;
   std::cout << "\n\t\tEnter password you want to set(must be 10 charactered ): ";
-
+  hout.close();
   std::ofstream sout;
   sout.open("created_acc.txt");
 
@@ -24,7 +24,7 @@ void admin::create_acc()
     sout << passwd[i];
     std::cout << "$";
   }
-
+    sout.close();
   std::cout << std::endl;
-  login();
+  
 }

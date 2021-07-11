@@ -4,6 +4,7 @@
 #include <conio.h>
 #include <fstream>
 
+
 #include "food_stall.cpp"
 
 using namespace std;
@@ -37,8 +38,12 @@ int main()
       cout << "\n\t\tEnter your choice : ";
       int tmp;
       cin >> tmp;
+     
+      
+      
       if (tmp == 1)
       {
+
         ad.create_acc();
         if (ad.flag == 0 && ad.inv_key == 5)
         {
@@ -46,37 +51,63 @@ int main()
           break;
         }
         fs.food_stall1();
+
       }
+     
+     
+     
       else if (tmp == 2)
       {
-        ad.direct_login();
-        if (ad.flag == 0 && ad.inv_key == 5)
+
+      /*  ad.direct_login();*/
+       /* if (ad.flag == 0 && ad.inv_key == 5)
         {
           cout << "\t\tfailed to login!!\n";
           break;
         }
-
+*/
         fs.food_stall1();
+
       }
+     
+     
+     
       else if (tmp == 0)
       {
+       
         cout << "\n\t\tThank you for visiting our portal!!!!!!!!!! ";
         break;
+
       }
+
+
     }
 
+    
+    
+    
+    
     else if (choice == 2)
     {
+      
       cout << "\n\t\tWELCOME TO FOOD STALL PORTAL\n";
       fs.food_stall1();
+      if(ad.rflag==1)
+      {
+        return 0;
+      }
+
+
     }
 
+   
     else if (choice == 3)
     {
+     
       cout << "\n\n\t\tWELCOME TO CUSTOMER PORTAL ";
       cout << "\n\t\tEnter your mobile number to continue : ";
-      string mbe;
-      cin >> mbe;
+      
+      cin >>g.mob1;
       cout << "\n\t\tEnter your name : ";
       cin >> g.name;
       cout << "\n\n\t\tPress 1 to view menu ";
@@ -84,15 +115,20 @@ int main()
       cout << "\n\t\tEnter your choice : ";
       int num;
       cin >> num;
+      
       if (num == 1)
       {
         fs.view_stall();
       }
+      
       else
       {
         cout << "\n\t\tThank you for visiting our portal!!!!!!!!!!";
         break;
       }
+
     }
+
   }
+
 }

@@ -34,3 +34,8 @@ cold cofee : 20 Rs
 Tea        : 20 Rs
 
 
+
+
+tea     : 10 Rs
+cake     : 50 Rs
+drink     : 20 Rs

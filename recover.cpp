@@ -15,5 +15,8 @@ void admin::recover()
     std::cout << "\t\tpassword : " << passwd << std::endl;
  
   }
+  else{
+    std::cout<<"\n\t\tInvalid mobile number";rflag=1;flag=1;inv_key=5; return;
+  }
 
 }

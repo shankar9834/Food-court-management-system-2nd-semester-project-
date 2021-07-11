@@ -1,4 +1,5 @@
 #include "recover.cpp"
+
 #include <fstream>
 
 void admin::login()
@@ -8,11 +9,22 @@ void admin::login()
   std::string us;
   std::cin >> us;
   std::string ps;
+  std::ifstream hin;
+  hin.open("user_name.txt");
+  std::string unm;
+  hin>>unm;
+  hin.close();
+  std::ifstream hout;
+  hout.open("created_acc.txt");
+  std::string pass;
+  hout>>pass;
+  hout.close();
+  
   flag = 0;
   std::cout << "\n\t\tEnter your password : ";
   std::cin >> ps;
-  while (us != uname || ps != passwd)
-  {
+  while (us != unm || ps != pass)
+  {  
     std::cout << "\n\t\tinvalid username or password\n";
     std::cout << "\n\t\tif you want to recover account press 2  ";
     std::cout << "\n\t\tpress 1 to try again ";
@@ -37,7 +49,7 @@ void admin::login()
       std::cin >> ps;
     }
     else
-    {
+    { rflag=1;
       return;
     }
   }
@@ -97,7 +109,7 @@ void admin::direct_login()
         std::cin >> ps1;
       }
       else if (t == 0)
-      {
+      {  
         flag = 0;
         inv_key = 5;
         return;

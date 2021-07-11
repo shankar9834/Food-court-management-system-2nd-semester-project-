@@ -4,8 +4,11 @@
 #include <conio.h>
 #include <vector>
 #include <utility>
+#include "indian.cpp"
+#include "chinese.cpp"
 
 // logic for the admin class
+
 class admin
 {
 private:
@@ -14,11 +17,12 @@ private:
 
 public:
   bool flag;
+  bool rflag=0;
   int inv_key = 0;
   std::string mob;
   std::string mail;
   std::string stall_name;
-  std::vector<std::pair<std::string, int>> items;
+ 
   void login();
   void direct_login();
 
@@ -28,18 +32,29 @@ public:
 } ad;
 
 //  logic for guest class
+
+
 class customer : public admin
 {
 public:
   std::string name;
-
+  std::string mob1;
 } g;
 
+
 // food stall
+
+
 class food_stall
 {
+  private:
+   indian i1;
+    chinese c1;
 public:
+    std::string stall_name;
+   
   void view_stall();
   void food_stall1();
+  
 } fs;
 #endif

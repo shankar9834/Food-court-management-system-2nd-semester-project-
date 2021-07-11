@@ -1,11 +1,35 @@
 #include<fstream>
 #include "login.cpp"
+/*#include "chinese.cpp"*/
+/*#include "indian.cpp"*/
 
 
 
 void food_stall::view_stall()
 {
+  std::cout<<"\n\t\tpress 1 to view chinese items ";
+  std::cout<<"\n\t\tpress 2 to view indian items ";
+   std::cout<<"\n\t\tpress 3 to view all items ";
+std::cout<<"\n\t\tEnter your choice : ";
+int rsp;
+std::cin>>rsp;
 
+if(rsp==1)
+{
+   
+    c1.view_citem();
+
+}
+else if(rsp==2)
+{
+  
+  i1.view_iitems();
+}
+
+
+else if(rsp==3){
+   
+std::cout<<"\n\t\t"<<stall_name;
 std::ifstream vout;
 vout.open("stalls.txt");
 while(!vout.eof())
@@ -13,8 +37,8 @@ while(!vout.eof())
   getline(vout,sm);
   std::cout<<"\n\t\t"<<sm;
     
-}
-
+   }
+  }
 
 
 
@@ -28,35 +52,24 @@ while(!vout.eof())
 
 void food_stall::food_stall1()
 {
+
+     ad.login();
+     if(ad.rflag==1)
+     {
+           std::cout<<"\n\t\tsomething wrong with your crendentials ,please create new account";
+           return;
+     }
+
   std::cout << "\n\n\t\tpress 1 to add your stall ";
   std::cout <<"\n\t\tpress 2 to view your stall ";
   //std::cout << "\n\t\tpress 3 to view your profile";
   std::cout << "\n\t\tEnter your choice: ";
   int ans;
   std::cin>>ans;
-  /*int res;
-  std::cin >> res;
-  if (res == 1)
-  {
-    std::cout << "\n\n\t\tEnter stall name you want to add : ";
-    std::cin >> stall_name;
-    std::cout << "\n\t\tEnter number of food items you want to add in stall : ";
-    int res2;
-    std::string s;
-    std::cin >> res2;
-    std::cout << "\n";
-    std::cout << "\n\t\tEnter food items with price\n";
-    int pr;
-    for (int i = 0; i < res2; i++)
-    {
-      std::cin >> s;
-      std::cin >> pr;
-      items.push_back(make_pair(s, pr));
-    }
-    std::cout << "\n\n\t\titems added succesfully\n";
-  }*/
+ 
   if(ans==1)
-  {
+  { std::cout<<"\n\t\tname of your stall : ";
+      std::cin>>stall_name;
   std::ofstream out;
   out.open("stalls.txt",std::ios::app);
   std::cout<<"\n\t\tHow many items you are going to add in stall : ";
